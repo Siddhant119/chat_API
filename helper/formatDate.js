@@ -2,7 +2,6 @@ const moment = require('moment');
 //const { format } = require('path');
 
 function formatMessage(username, text) {
-    console.log(text);
     return {
         username,
         text,

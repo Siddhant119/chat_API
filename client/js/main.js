@@ -15,12 +15,13 @@ socket.on('message', message => {
     outputMessage(message);
 });
 
-socket.on('roomUsers',({room, activeUsers}) => {
+socket.on('roomUsers',({room, users}) => {
     outputRoomName(room);
-    outputUsers(activeUsers);
+    outputUsers(users);
 })
 
 chatForm.addEventListener('submit', event => {
+    event.preventDefault();
     let msg = event.target.elements.msg.value;
     msg = msg.trim();
     socket.emit('chatMessage', msg);
